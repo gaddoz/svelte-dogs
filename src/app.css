@@ -50,8 +50,8 @@ body::before {
 	flex-direction: column;
 }
 
-h1,
-h2,
+h1, .h1,
+h2, .h2,
 p {
 	font-weight: 400;
 	color: var(--heading-color);
@@ -70,12 +70,12 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1 {
+h1, .h1 {
 	font-size: 2rem;
 	text-align: center;
 }
 
-h2 {
+h2, .h2 {
 	font-size: 1rem;
 }
 
