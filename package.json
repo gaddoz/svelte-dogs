@@ -1,5 +1,5 @@
 {
-  "name": "svelte-dogs",
+  "name": "svelte-dogs-test",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
