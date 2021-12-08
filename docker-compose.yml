@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  cypress:
+    image: cypress
+    build: ./e2e-tests
+    container_name: cypress-svelte-dogs
+    depends_on:
+      - frontend
+    environment:
+      - CYPRESS_baseUrl=http://frontend:80
+      - NO_COLORS=1
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - npx cypress run
+    volumes:
+      - ./e2e-tests/cypress:/app/cypress
+      - ./e2e-tests/cypress.json:/app/cypress.json
+  frontend:
+    build: ./
+    volumes:
+      - ./source-app:/src/
+    container_name: frontend
+    ports:
+      - 4200:80

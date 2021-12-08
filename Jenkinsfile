@@ -22,6 +22,13 @@ pipeline {
       }
     }
 
+    stage('E2E Test') {
+      steps {
+        sh "docker-compose up --abort-on-container-exit --exit-code-from cypress"
+        sh "cat e2e-tests/cypress/results/output.xml"
+      }
+    }
+
     stage('Docker Tag & Push') {
 
       steps {
