@@ -9,7 +9,7 @@ services:
       - frontend
     environment:
       - CYPRESS_baseUrl=http://frontend:80
-      - NO_COLORS=1
+      - NO_COLOR=1
     entrypoint: ["/bin/sh","-c"]
     command:
       - npx cypress run
